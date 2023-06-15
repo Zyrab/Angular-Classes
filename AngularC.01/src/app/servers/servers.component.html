@@ -1,2 +1,21 @@
-<app-server></app-server>
-<button class="btn btn-primary" [disabled]="!allowNewUser"> Add User</button>
+<!-- we can display content few ways in angular, we can use properties or {{}}. when we use peoperties we write 
+    method or property name in [] -->
+    <h4>Assignment 2</h4>
+    <app-assignment2></app-assignment2>
+    <hr>
+    <label for=""> Server Name</label>
+
+    <!-- this is an example how to get input value. we use $event to fetch this date -->
+    <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+    <!--  this is an example how to display servervalue -->
+    
+    <!-- we can also use [(ngModel)] that allows 2 way binding -->
+    <input type="text" class="form-control" [(ngModel)] ='serverName'>
+    <!-- <p>{{serverName}}</p> -->
+
+    <!-- to bind events on buttons or any html object we use () = 'method'  -->
+    <!-- we can also put the code js code in '' when using event. if the code is short -->
+    <button class="btn btn-primary" [disabled]="!allowNewUser" (click)="onCreateServer()"> Add Server</button>
+    <!-- <p [innerText]="allowNewUser"> </p> -->
+    <p>{{serverCreationStatus}}</p>
+    <app-server></app-server>
