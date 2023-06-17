@@ -10,6 +10,8 @@ export class ServersComponent {
   allowNewUser = false ;
   serverCreationStatus = 'No server was created!' ;
   serverName = 'Test Server';
+  serverCreated = false ;
+  users = ['Test user', 'Test user2']
   // angular functions: we create functions in Ts in export class, in angular functions we call methods
 
 
@@ -20,6 +22,8 @@ export class ServersComponent {
   
 
   onCreateServer() {
+    this.users.push(this.serverName)
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created ! Name is ' + this.serverName;
   }
   // this is example of how we can target dom elements. in this case we target html input to get text as a value

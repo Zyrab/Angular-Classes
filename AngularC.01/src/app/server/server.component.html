@@ -1,1 +1,3 @@
- <p> {{'User'}} With ID: {{ userId }} is {{ userStatus }} </p>
+ <p [ngStyle]="{backgroundColor: getColor()}"
+ [ngClass]="{Online: userStatus === 'Online'}">
+  {{'User'}} With ID: {{ userId }} is {{ userStatus }} </p>
